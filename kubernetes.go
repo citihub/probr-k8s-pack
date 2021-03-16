@@ -3,10 +3,10 @@ package kubernetes
 import (
 	"github.com/citihub/probr/config"
 	"github.com/citihub/probr/service_packs/coreengine"
-	cra "github.com/citihub/probr/service_packs/kubernetes/container_registry_access"
-	"github.com/citihub/probr/service_packs/kubernetes/general"
-	"github.com/citihub/probr/service_packs/kubernetes/iam"
-	"github.com/citihub/probr/service_packs/kubernetes/podsecurity"
+	cra "github.com/citihub/probr-k8s-service/container_registry_access"
+	"github.com/citihub/probr-k8s-service/general"
+	"github.com/citihub/probr-k8s-service/iam"
+	"github.com/citihub/probr-k8s-service/podsecurity"
 	"github.com/markbates/pkger"
 )
 

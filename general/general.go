@@ -14,8 +14,8 @@ import (
 	"github.com/citihub/probr/audit"
 	"github.com/citihub/probr/config"
 	"github.com/citihub/probr/service_packs/coreengine"
-	"github.com/citihub/probr/service_packs/kubernetes/connection"
-	"github.com/citihub/probr/service_packs/kubernetes/constructors"
+	"github.com/citihub/probr-k8s-service/connection"
+	"github.com/citihub/probr-k8s-service/constructors"
 	"github.com/citihub/probr/utils"
 )
 
