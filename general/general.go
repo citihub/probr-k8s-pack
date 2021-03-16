@@ -6,6 +6,8 @@ import (
 	"log"
 	"net/url"
 	"strings"
+	"os"
+	"go/build"
 
 	apiv1 "k8s.io/api/core/v1"
 

@@ -5,6 +5,8 @@ import (
 	"log"
 	"strconv"
 	"strings"
+	"os"
+	"go/build"
 
 	"github.com/cucumber/godog"
 

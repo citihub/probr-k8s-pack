@@ -4,6 +4,8 @@ package cra
 import (
 	"fmt"
 	"log"
+	"os"
+	"go/build"
 
 	"github.com/cucumber/godog"
 	apiv1 "k8s.io/api/core/v1"
