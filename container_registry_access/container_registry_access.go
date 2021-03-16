@@ -3,7 +3,6 @@ package cra
 
 import (
 	"fmt"
-	"go/build"
 	"log"
 	"os"
 

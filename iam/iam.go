@@ -4,7 +4,6 @@ package iam
 import (
 	"encoding/json"
 	"fmt"
-	"go/build"
 	"log"
 	"os"
 

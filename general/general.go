@@ -3,7 +3,6 @@ package general
 
 import (
 	"fmt"
-	"go/build"
 	"log"
 	"net/url"
 	"os"

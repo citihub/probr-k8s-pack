@@ -2,7 +2,6 @@ package podsecurity
 
 import (
 	"fmt"
-	"go/build"
 	"log"
 	"os"
 	"strconv"
