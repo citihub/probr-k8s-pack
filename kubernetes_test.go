@@ -1,4 +1,4 @@
-package kubernetes_pack
+package kubernetes
 
 import (
 	"testing"
