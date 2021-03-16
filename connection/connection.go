@@ -11,9 +11,9 @@ import (
 	"sync"
 	"time"
 
+	"github.com/citihub/probr-k8s-service/errors"
 	"github.com/citihub/probr/audit"
 	"github.com/citihub/probr/config"
-	"github.com/citihub/probr-k8s-service/errors"
 	"github.com/citihub/probr/utils"
 	apiv1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

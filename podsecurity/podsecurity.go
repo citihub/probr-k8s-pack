@@ -2,20 +2,20 @@ package podsecurity
 
 import (
 	"fmt"
+	"go/build"
 	"log"
+	"os"
 	"strconv"
 	"strings"
-	"os"
-	"go/build"
 
 	"github.com/cucumber/godog"
 
-	"github.com/citihub/probr/audit"
-	"github.com/citihub/probr/config"
-	"github.com/citihub/probr/service_packs/coreengine"
 	"github.com/citihub/probr-k8s-service/connection"
 	"github.com/citihub/probr-k8s-service/constructors"
 	"github.com/citihub/probr-k8s-service/errors"
+	"github.com/citihub/probr/audit"
+	"github.com/citihub/probr/config"
+	"github.com/citihub/probr/service_packs/coreengine"
 	"github.com/citihub/probr/utils"
 
 	apiv1 "k8s.io/api/core/v1"
@@ -311,7 +311,11 @@ func (probe probeStruct) Name() string {
 
 // Path presents the path of these feature files for external reference
 func (probe probeStruct) Path() string {
-	return coreengine.GetFeaturePath(os.Getwd(), probe.Name())
+	workingDir, err := os.Getwd()
+	if err != nil {
+		log.Println(err)
+	}
+	return coreengine.GetFeaturePath(workingDir, probe.Name())
 }
 
 // ProbeInitialize handles any overall Test Suite initialisation steps.  This is registered with the

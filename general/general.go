@@ -3,21 +3,21 @@ package general
 
 import (
 	"fmt"
+	"go/build"
 	"log"
 	"net/url"
-	"strings"
 	"os"
-	"go/build"
+	"strings"
 
 	apiv1 "k8s.io/api/core/v1"
 
 	"github.com/cucumber/godog"
 
+	"github.com/citihub/probr-k8s-service/connection"
+	"github.com/citihub/probr-k8s-service/constructors"
 	"github.com/citihub/probr/audit"
 	"github.com/citihub/probr/config"
 	"github.com/citihub/probr/service_packs/coreengine"
-	"github.com/citihub/probr-k8s-service/connection"
-	"github.com/citihub/probr-k8s-service/constructors"
 	"github.com/citihub/probr/utils"
 )
 
@@ -210,9 +210,12 @@ func (probe probeStruct) Name() string {
 
 // Path presents the path of these feature files for external reference
 func (probe probeStruct) Path() string {
-	return coreengine.GetFeaturePath(os.Getwd(), probe.Name())
+	workingDir, err := os.Getwd()
+	if err != nil {
+		log.Println(err)
+	}
+	return coreengine.GetFeaturePath(workingDir, probe.Name())
 }
-
 
 // ProbeInitialize handles any overall Test Suite initialisation steps.  This is registered with the
 // test handler as part of the init() function.
