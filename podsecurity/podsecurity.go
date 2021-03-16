@@ -309,7 +309,11 @@ func (probe probeStruct) Name() string {
 
 // Path presents the path of these feature files for external reference
 func (probe probeStruct) Path() string {
-	return coreengine.GetFeaturePath("service_packs", "kubernetes", probe.Name())
+	gopath := os.Getenv("GOPATH")
+    if gopath == "" {
+        gopath = build.Default.GOPATH
+    }
+	return coreengine.GetFeaturePath(gopath, "kubernetes", probe.Name())
 }
 
 // ProbeInitialize handles any overall Test Suite initialisation steps.  This is registered with the
